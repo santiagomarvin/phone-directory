@@ -19,4 +19,4 @@ Route::get('/', [
     'uses' => 'PagesController@home'
 ]);
 
-Route::resource('tasks', 'TasksController');
+Route::resource('contacts', 'ContactsController');
