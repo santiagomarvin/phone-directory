@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Contact;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -15,8 +16,9 @@ class ContactsController extends Controller
      */
     public function index()
     {
-        return view('contacts.index');
-    }
+        $contacts = Contact::all();
+        return view('contacts.index', compact('contacts'));
+   }
 
     /**
      * Show the form for creating a new resource.
@@ -51,7 +53,9 @@ class ContactsController extends Controller
      */
     public function show($id)
     {
-        //
+        $contact = Contact::find($id);
+
+        return view('contacts.show', compact('contact'));
     }
 
     /**
