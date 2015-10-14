@@ -1,11 +1,9 @@
 @extends('layouts.master')
 
 @section('content')
-<p class="lead">Add a New Contact</p>
+<h2>Add a New Contact</h2>
 <hr>
-{!! Form::open([
-    'route' => 'contacts.store'
-]) !!}
+{!! Form::open(['url' => 'contacts']) !!}
 
 <div class="form-group">
     {!! Form::label('name', 'Name:', ['class' => 'control-label']) !!}
@@ -29,4 +27,12 @@
 {!! Form::submit('Create New Contact', ['class' => 'btn btn-primary']) !!}
 
 {!! Form::close() !!}
+
+    @if ($errors->any())
+        <ul class="alert alert-danger">
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    @endif
 @stop

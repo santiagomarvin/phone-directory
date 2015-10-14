@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Contact;
-use Illuminate\Http\Request;
+use Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -36,13 +36,13 @@ class ContactsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Requests\CreateContactRequest $request)
     {
-        $input = $request->all();
+        $input = Request::all();
 
         Contact::create($input);
 
-        return redirect()->back();
+        return redirect('contacts');
     }
 
     /**
