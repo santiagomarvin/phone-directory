@@ -36,7 +36,7 @@ class ContactsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Requests\CreateContactRequest $request)
+    public function store(Requests\ContactRequest $request)
     {
         $input = Request::all();
 
@@ -66,7 +66,8 @@ class ContactsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $contact = Contact::findorFail($id);
+        return view('contacts.edit', compact('contact'));
     }
 
     /**
@@ -78,7 +79,11 @@ class ContactsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $contact = Contact::findorFail($id);
+
+        $contact->update($request::all());
+
+        return redirect('contacts');
     }
 
     /**
