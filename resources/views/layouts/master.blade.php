@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Tasks</title>
+<title>Phone Directory</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 </head>
 <body>
@@ -14,7 +14,6 @@
       <a class="navbar-brand" href="{{ route('home') }}">Phone Directory</a>
     </div>
     <div class="nav navbar-nav navbar-right">
-        <li><a href="{{ route('home') }}">Home</a></li>
         <li><a href="{{ route('contacts.index') }}">Contacts</a></li>
     </div>
   </div>

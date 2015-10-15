@@ -2,8 +2,7 @@
 
 @section('content')
 
-<h1>Phone Directory</h1>
-<p class="lead">Here's a list of all your contacts. <a href="{{ route('contacts.create') }}">Add a new one?</a></p>
+<p class="lead"><a href="{{ route('contacts.create') }}">Add New Contact</a></p>
 
 @foreach ($contacts as $contact)
     <article>
