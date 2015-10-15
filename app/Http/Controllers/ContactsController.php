@@ -94,6 +94,10 @@ class ContactsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $contact = Contact::findorFail($id);
+
+        $contact->delete();
+
+        return redirect('contacts');
     }
 }
