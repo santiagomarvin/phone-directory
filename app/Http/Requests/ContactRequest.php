@@ -24,10 +24,11 @@ class ContactRequest extends Request
     public function rules()
     {
         return [
+        // Add some basic validations to form
             'name' => 'required|min:3',
             'address' => 'required|min:3',
             'phone' => 'required|min:3',
-            'email' => 'required|unique',
+            'email' => 'required|min:3',
         ];
     }
 }
